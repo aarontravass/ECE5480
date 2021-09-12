@@ -12,6 +12,6 @@ soup = BeautifulSoup(myres.text, "html.parser")
 elems = soup.select(".gs_rt a")
 num = min(len(elems), 5)
 for i in range(num):
-    url=elems[i].get("href")
+    url = elems[i].get("href")
     print(url)
     webbrowser.open_new_tab(url)

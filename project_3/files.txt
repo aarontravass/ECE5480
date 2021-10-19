@@ -2,3 +2,9 @@ C:\Users\Aaron\Documents\vt\ECE5480\project_3\calendar_time_example.py
 C:\Users\Aaron\Documents\vt\ECE5480\project_3\dns_log_file.txt
 C:\Users\Aaron\Documents\vt\ECE5480\project_3\proj_3_task_2_starter.py
 C:\Users\Aaron\Documents\vt\ECE5480\project_3\task_1_incomplete.py
+C:\Users\Aaron\Documents\vt\ECE5480\project_3\calendar_time_example.py
+C:\Users\Aaron\Documents\vt\ECE5480\project_3\directors.txt
+C:\Users\Aaron\Documents\vt\ECE5480\project_3\dns_log_file.txt
+C:\Users\Aaron\Documents\vt\ECE5480\project_3\files.txt
+C:\Users\Aaron\Documents\vt\ECE5480\project_3\proj_3_task_2_starter.py
+C:\Users\Aaron\Documents\vt\ECE5480\project_3\task_1_incomplete.py

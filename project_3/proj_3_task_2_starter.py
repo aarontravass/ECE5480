@@ -32,8 +32,8 @@ def fetchDT(date_str: str):
 type_A = []
 
 
-def ipCheck(ip_bad):
-    ip_good = ""
+def ipClean(ip_bad):
+    ip_good = ip_bad.split("#")[0]
     return ip_good
 
 
@@ -66,12 +66,14 @@ for log in type_A:
     if (max_rec["t"] < fetchDT(var[0] + " " + var[1])):
         max_rec["t"] = fetchDT(var[0] + " " + var[1])
         max_rec["r"] = log
-    # ip = ipCheck(var[6])
-    # if (ip != ""):
-    #     try:
-    #         ip_list[ip] = ip_list[ip] + 1
-    #     except:
-    #         ip_list[ip] = 1
+    ip = ipClean(var[5])
+    if (ip != ""):
+        try:
+            ip_list[ip] = ip_list[ip] + 1
+        except:
+            ip_list[ip] = 1
+        if (ip_list[ip] > common_ip["count"]):
+            common_ip = {"count": ip_list[ip], "ip": ip}
     query = var[len(var) - 4]
     try:
         query_list[query] = query_list[query] + 1
@@ -79,8 +81,7 @@ for log in type_A:
         query_list[query] = 1
     if (query_list[query] > common_address["count"]):
         common_address = {"count": query_list[query], "ip": query}
-    # if (ip_list[ip] > common_ip["count"])
-    #     common_ip = {"count": ip_list[ip], "ip": ip}
+
 
 # You don't need to solve this in one big for loop -- complex code is seldom better
 
@@ -94,24 +95,24 @@ print("Last record time: " + str(max_rec["t"]) + " and record: " + max_rec["r"])
 
 # 3.) Total number of records
 # number of elements in your good records list
-print("Total number of records: " , len(type_A))
+print("Total number of records: ", len(type_A))
 # 4.) Number of unique client  IP addresses (ignore port #)
 # create a dictionary to hold your ip addresses
 # find the good_record element containing the ip address and port number
 # separate the ip address from the port number
 # add the ip address to the dictionary as the key and increment its count as the value
-# print("Number of unique client IPs: ",len(ip_list.keys()))
+print("Number of unique client IPs: ", len(ip_list.keys()))
 
 # 5.) Number of unique query domains (ignore query IP addresses)
 # do similar for the query domain
-print("Number of unique Query domains: " , len(query_list.keys()))
+print("Number of unique Query domains: ", len(query_list.keys()))
 # 6.) Most common client address  and number of occurrences
 # a dictionary's keys() is a list of all the keys in the dictionary
 # dict[key] refers to the value associated with key key
 # you could create a for loop to look at each value for each key and find the largest value -- the
 # key associated with the largest value is the most common client ip address
-# print("Most common client address: ",common_ip["ip"]," and count: ",common_ip["count"])
+print("Most common client address: ", common_ip["ip"], " and count: ", common_ip["count"])
 
 # 7.) Most common query domain and number of occurrences
 # do something similar
-print("Most common client query: " , common_address["ip"] , " and count: " , common_address["count"])
+print("Most common client query: ", common_address["ip"], " and count: ", common_address["count"])

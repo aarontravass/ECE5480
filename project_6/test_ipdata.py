@@ -7,11 +7,11 @@
 
 
 import urllib.request
-
+api_key='aafbf2630f4bb48d5ab05c4f7d93313cf6c92bbfe3f59755fca44a2c'
 headers = {
   'Accept': 'application/json'
 }
-request = urllib.request.Request('https://api.ipdata.co/8.8.8.8?api-key=your_key', headers=headers)
+request = urllib.request.Request('https://api.ipdata.co/8.8.8.8?api-key=', headers=headers)
 
 response_body = urllib.request.urlopen(request).read()
 

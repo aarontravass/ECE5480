@@ -44,7 +44,7 @@ def ipClean(ip_bad):
 # append the record to your good records list if the record passes your filter
 for log in logs:
     var = log.rstrip().split(" ")
-    if (var[len(var) - 2] == "A"):
+    if ("A" in var):
         type_A.append(log.rstrip())
 min_rec = {"t": "", "r": ""}
 max_rec = {"t": "", "r": ""}
